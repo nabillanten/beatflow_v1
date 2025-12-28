@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Stream Music - Playlist</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  </head>
+  <body>
+    <nav style="text-align: center; padding: 20px">
+      <a
+        href="index.html"
+        class="btn btn-blue"
+        style="width: auto; display: inline-block"
+        >⬅ Upload Lagu Baru</a
+      >
+    </nav>
+
+    <div class="container" style="max-width: 900px">
+      <h1 style="padding: 24px">🎧 BeatFlow</h1>
+      <div id="loadingText" style="text-align: center">
+        Sedang memuat lagu...
+      </div>
+      <div id="songGrid" class="song-grid"></div>
+    </div>
+
+    <div class="sticky-player hidden" id="stickyPlayer">
+      <div class="player-info">
+        <img id="playerImg" src="" alt="Cover" />
+        <div>
+          <h4 id="playerTitle">Judul Lagu</h4>
+          <p id="playerArtist">Nama Artis</p>
+        </div>
+      </div>
+      <audio id="mainAudio" controls autoplay></audio>
+    </div>
+
+    <script src="player.js"></script>
+  </body>
+</html>

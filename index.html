@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sistem Multimedia - Tugas Besar</title>
+    <link rel="stylesheet" href="style.css" />
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  </head>
+  <body>
+    
+    <div class="container">
+      <h1>Upload Music</h1>
+      <p class="subtitle">Upload your music to database</p>
+
+      <div class="card">
+        <h3>Pilih File Audio (Source)</h3>
+        <input type="file" id="audioInput" accept="audio/*" />
+        <label for="audioInput" class="btn btn-blue">📂 Pilih File (WAV)</label>
+        <p id="fileName" class="status-text">Belum ada file.</p>
+      </div>
+
+      <div id="loadingArea" class="hidden">
+        <div class="loader"></div>
+        <p>Sedang memproses kompresi audio...</p>
+      </div>
+
+      <div id="resultArea" class="hidden">
+        <div class="card result-box">
+          <h4>Preview Hasil Kompresi</h4>
+          <p>Original: <span id="origSize">-</span> MB</p>
+          <p>
+            Compressed:
+            <span id="compSize" style="color: green; font-weight: bold">-</span>
+            MB
+          </p>
+          <audio id="compAudio" controls></audio>
+        </div>
+
+        <div class="card form-box">
+          <h4>Data Lagu & Upload</h4>
+
+          <div class="form-group">
+            <label>Judul Lagu:</label>
+            <input
+              type="text"
+              id="inputJudul"
+              placeholder="Masukkan judul..." />
+          </div>
+
+          <div class="form-group">
+            <label>Nama Artis:</label>
+            <input
+              type="text"
+              id="inputArtist"
+              placeholder="Nama penyanyi..." />
+          </div>
+
+          <div class="form-group">
+            <label>Cover Album (Gambar):</label>
+
+            <input type="file" id="inputImage" accept="image/*" />
+
+            <label
+              for="inputImage"
+              class="btn"
+              style="background-color: #8b5cf6; margin-top: 5px">
+              📷 Pilih Gambar Cover
+            </label>
+
+            <p
+              id="imageName"
+              style="font-size: 12px; color: #666; margin-top: 5px">
+              Belum ada gambar dipilih.
+            </p>
+          </div>
+
+          <button id="uploadBtn" class="btn btn-green">
+            ☁️ Upload ke Database
+          </button>
+        </div>
+      </div>
+        <a
+        href="player.html"
+        style="width: auto; display: block;"
+        >Lihat Daftar Putar</a
+      >
+    </div>
+
+    <script src="compressor.js"></script>
+    <script src="main.js"></script>
+  </body>
+</html>
